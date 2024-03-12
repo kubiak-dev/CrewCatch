@@ -59,23 +59,33 @@ class Boat {
 }
 
 extension Boat {
-    enum BoatType: String {
+    enum BoatType: String, Codable, Identifiable, CaseIterable {
         case SailingYacht = "Sailing Yacht"
         case Catamaran = "Catamaran"
         case Motoryacht = "Motoryacht"
+
+        var id: Self {
+            self
+        }
     }
 }
 
 extension Boat {
-    enum AmenityType: String {
+    enum AmenityType: String, Codable {
         case navigation_safety = "Navigation and safety"
         case utensils = "Utensils"
         case entertainment = "Entertainment"
+
     }
 
-    struct Amenity {
+    struct Amenity: Codable {
         var type: AmenityType
         var description: String
+
+        init(type: AmenityType, description: String) {
+            self.type = type
+            self.description = description
+        }
     }
 
     static var Amenities: [Amenity] = [

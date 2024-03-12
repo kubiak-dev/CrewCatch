@@ -7,64 +7,75 @@
 
 import Foundation
 import SwiftData
+import MapKit
 
 @Model
-class Trip {
+class Trip: Identifiable, Hashable {
+    @Attribute(.unique) var tripID: UUID = UUID()
+    var name: String
+
+//    var organizer: User
+//    var participants: [User]?
+    var organizer: String
+    var crew: [String]?
+
+    var stops: [Stop]?
+
+//    var startDate: Date {
+//        return stops?.first?.departureTime ?? Date()
+//    }
+//    var endDate: Date {
+//        return stops?.last?.arrivalTime ?? Date()
+//    }
     var startDate: Date
     var endDate: Date
-    var startHour: Int
-    var startMinute: Int
-    var endHour: Int
-    var endMinute: Int
-    var startLocation: String
-    var startHarbor: String
-    var endLocation: String
-    var endHarbor: String
-    var stops: [Stop]
 
-    init(startDate: Date, endDate: Date, startHour: Int, startMinute: Int, endHour: Int, endMinute: Int, startLocation: String, endLocation: String) {
+    init(name: String, organizer: String, crew: [String]? = nil, stops: [Stop]? = nil, startDate: Date, endDate: Date) {
+        self.name = name
+        self.organizer = organizer
+        self.crew = crew
+        self.stops = stops
         self.startDate = startDate
         self.endDate = endDate
-        self.startHour = startHour
-        self.startMinute = startMinute
-        self.startLocation = startLocation
-        self.endLocation = endLocation
-        self.endHour = endHour
-        self.endMinute = endMinute
     }
 
-    var startTime: Date {
-        let calendar = Calendar.current
-        var dateComponents = calendar.dateComponents([.year, .month, .day], from: startDate)
-        dateComponents.hour = startHour
-        dateComponents.minute = startMinute
-        return calendar.date(from: dateComponents)!
-    }
-
-    var endTime: Date {
-        let calendar = Calendar.current
-        var dateComponents = calendar.dateComponents([.year, .month, .day], from: endDate)
-        dateComponents.hour = endHour
-        dateComponents.minute = endMinute
-        return calendar.date(from: dateComponents)!
-    }
+//    init(name: String, organizer: User, participants: [User]? = nil, stops: [Stop]? = nil) {
+//        self.name = name
+//        self.organizer = organizer
+//        self.participants = participants
+//        self.stops = stops
+//    }
 
 }
 
-struct Stop {
-    var country: String
-    var city: String
-    var harbor: String
-    var arrival: Date?
-    var departure: Date?
-    var description: String?
+extension Trip {
+    enum TripType: Int, Codable, Identifiable, CaseIterable {
+        case recreational, trainig, recreationalAndTraining
 
-    init(country: String, city: String, harbor: String, arrival: Date? = nil, departure: Date? = nil, description: String? = nil) {
-        self.country = country
-        self.city = city
-        self.harbor = harbor
-        self.arrival = arrival
-        self.departure = departure
-        self.description = description
+        var id: Self {
+            self
+        }
+        
+        var descr: String {
+            switch self {
+            case .recreational:
+                return "Recreational"
+            case .trainig:
+                return "Training"
+            case .recreationalAndTraining:
+                return "Recreational and Training"
+            }
+        }
+    }
+}
+
+extension Trip {
+    static var mockTrip: Trip {
+        Trip(name: "Mock Trip", 
+             organizer: "Paweł",
+             crew: ["Ilona", "Adam", "Krzysiek"],
+             stops: [],
+             startDate: Date(),
+             endDate: Date())
     }
 }

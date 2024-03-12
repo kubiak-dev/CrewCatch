@@ -11,19 +11,19 @@ import SwiftUI
 extension View {
     func roundedTextFieldWithBorder(
         cornerRadius: CGFloat = 15,
-        backgroundColor: Color = .BackgroundColor,
-        foregroundColor: Color = .TextColor,
+        backgroundColor: Color = .background,
+        foregroundColor: Color = .text,
         borderColor: Color = .black,
         borderWidth: CGFloat = 2,
         opacity: CGFloat = 1
     ) -> some View {
         self.padding()
-            .background(.thinMaterial.opacity(opacity))
+            .background(.thickMaterial.opacity(opacity))
             .cornerRadius(cornerRadius)
-            .foregroundColor(Color.TextColor)
+//            .foregroundStyle(Color.text)
             .overlay(
                 RoundedRectangle(cornerRadius: cornerRadius)
-                    .stroke(Color.TextColor.opacity(1), lineWidth: borderWidth)
+                    .stroke(Color.text.opacity(1), lineWidth: borderWidth)
             )
             .autocorrectionDisabled(true)
     }

@@ -22,6 +22,15 @@
 		99ADE0BF2B9A61AA00F22250 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ADE0BE2B9A61AA00F22250 /* Color.swift */; };
 		99D3D74D2B9B917D0057BC5E /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D3D74C2B9B917D0057BC5E /* Trip.swift */; };
 		99D3D74F2B9B97130057BC5E /* Boat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D3D74E2B9B97130057BC5E /* Boat.swift */; };
+		99D3D7512B9C70E70057BC5E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D3D7502B9C70E70057BC5E /* User.swift */; };
+		99F4036C2B9DFC250015A882 /* CreateProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F4036B2B9DFC250015A882 /* CreateProfileView.swift */; };
+		99F4036E2B9E48870015A882 /* TripListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F4036D2B9E48870015A882 /* TripListView.swift */; };
+		99F403702B9E497F0015A882 /* NewTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F4036F2B9E497F0015A882 /* NewTripView.swift */; };
+		99F403732B9E4FA20015A882 /* TripListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F403722B9E4FA20015A882 /* TripListItem.swift */; };
+		99F403752B9E51330015A882 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F403742B9E51330015A882 /* Stop.swift */; };
+		99F4037D2B9FA6C80015A882 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F4037C2B9FA6C80015A882 /* LoginView.swift */; };
+		99F403822B9FA8620015A882 /* LogoNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F403812B9FA8620015A882 /* LogoNameView.swift */; };
+		99F403852BA0EBC80015A882 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F403842BA0EBC80015A882 /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		99137F452B9C7CD10053DF23 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = ../../../MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		997131322B9A6CA500D57099 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		997131342B9A6DAB00D57099 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		99ADE0882B9A549900F22250 /* CrewCatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrewCatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +71,16 @@
 		99ADE0BE2B9A61AA00F22250 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		99D3D74C2B9B917D0057BC5E /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		99D3D74E2B9B97130057BC5E /* Boat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boat.swift; sourceTree = "<group>"; };
+		99D3D7502B9C70E70057BC5E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		99F403692B9DD2820015A882 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		99F4036B2B9DFC250015A882 /* CreateProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileView.swift; sourceTree = "<group>"; };
+		99F4036D2B9E48870015A882 /* TripListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListView.swift; sourceTree = "<group>"; };
+		99F4036F2B9E497F0015A882 /* NewTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripView.swift; sourceTree = "<group>"; };
+		99F403722B9E4FA20015A882 /* TripListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListItem.swift; sourceTree = "<group>"; };
+		99F403742B9E51330015A882 /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
+		99F4037C2B9FA6C80015A882 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		99F403812B9FA8620015A882 /* LogoNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoNameView.swift; sourceTree = "<group>"; };
+		99F403842BA0EBC80015A882 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +135,9 @@
 				99ADE0B72B9A566800F22250 /* Assets */,
 				99ADE0BD2B9A619700F22250 /* Extensions */,
 				99D3D74B2B9B91190057BC5E /* Models */,
+				99F4036A2B9DFC070015A882 /* Views */,
 				99ADE08B2B9A549900F22250 /* CrewCatchApp.swift */,
-				99ADE08D2B9A549900F22250 /* ContentView.swift */,
+				99F403692B9DD2820015A882 /* MyPlayground.playground */,
 				99ADE0932B9A549A00F22250 /* Preview Content */,
 			);
 			path = CrewCatch;
@@ -170,11 +191,61 @@
 		99D3D74B2B9B91190057BC5E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				99137F452B9C7CD10053DF23 /* MyPlayground.playground */,
 				99ADE08F2B9A549900F22250 /* Item.swift */,
 				99D3D74C2B9B917D0057BC5E /* Trip.swift */,
 				99D3D74E2B9B97130057BC5E /* Boat.swift */,
+				99D3D7502B9C70E70057BC5E /* User.swift */,
+				99F403742B9E51330015A882 /* Stop.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		99F4036A2B9DFC070015A882 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				99F4037E2B9FA7320015A882 /* Subviews */,
+				99F4037B2B9FA6A30015A882 /* Auth */,
+				99F403832B9FB46F0015A882 /* User */,
+				99F403712B9E4F800015A882 /* Trip */,
+				99ADE08D2B9A549900F22250 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		99F403712B9E4F800015A882 /* Trip */ = {
+			isa = PBXGroup;
+			children = (
+				99F4036D2B9E48870015A882 /* TripListView.swift */,
+				99F4036F2B9E497F0015A882 /* NewTripView.swift */,
+				99F403722B9E4FA20015A882 /* TripListItem.swift */,
+			);
+			path = Trip;
+			sourceTree = "<group>";
+		};
+		99F4037B2B9FA6A30015A882 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				99F4037C2B9FA6C80015A882 /* LoginView.swift */,
+				99F403842BA0EBC80015A882 /* SignUpView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		99F4037E2B9FA7320015A882 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				99F403812B9FA8620015A882 /* LogoNameView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		99F403832B9FB46F0015A882 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				99F4036B2B9DFC250015A882 /* CreateProfileView.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,11 +380,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99F403702B9E497F0015A882 /* NewTripView.swift in Sources */,
 				997131352B9A6DAB00D57099 /* String.swift in Sources */,
 				997131332B9A6CA500D57099 /* View.swift in Sources */,
+				99F4037D2B9FA6C80015A882 /* LoginView.swift in Sources */,
+				99F4036E2B9E48870015A882 /* TripListView.swift in Sources */,
 				99ADE08E2B9A549900F22250 /* ContentView.swift in Sources */,
 				99D3D74F2B9B97130057BC5E /* Boat.swift in Sources */,
+				99F4036C2B9DFC250015A882 /* CreateProfileView.swift in Sources */,
+				99F403752B9E51330015A882 /* Stop.swift in Sources */,
 				99D3D74D2B9B917D0057BC5E /* Trip.swift in Sources */,
+				99F403822B9FA8620015A882 /* LogoNameView.swift in Sources */,
+				99F403732B9E4FA20015A882 /* TripListItem.swift in Sources */,
+				99F403852BA0EBC80015A882 /* SignUpView.swift in Sources */,
+				99D3D7512B9C70E70057BC5E /* User.swift in Sources */,
 				99ADE0BF2B9A61AA00F22250 /* Color.swift in Sources */,
 				99ADE0902B9A549900F22250 /* Item.swift in Sources */,
 				99ADE08C2B9A549900F22250 /* CrewCatchApp.swift in Sources */,
