@@ -1,16 +1,14 @@
 //
-//  SignUpView.swift
+//  LoginView.swift
 //  CrewCatch
 //
-//  Created by Krzysztof Kubiak on 12/03/2024.
+//  Created by Krzysztof Kubiak on 11/03/2024.
 //
 
 import SwiftUI
 
-struct SignUpView: View {
-    @State private var email = ""
-    @State private var password = ""
-    @Environment(\.dismiss) var dismiss
+struct SignInView: View {
+    @StateObject var viewModel = SignInViewModel()
 
     var body: some View {
         NavigationStack {
@@ -21,13 +19,13 @@ struct SignUpView: View {
 
                 VStack {
                     VStack(alignment: .leading, spacing: 15) {
-                        TextField("Enter your email address", text: $email)
+                        TextField("Email address", text: $viewModel.email)
                             .roundedTextFieldWithBorder()
                             .keyboardType(.emailAddress)
                             .autocorrectionDisabled(true)
                             .textInputAutocapitalization(.never)
 
-                        SecureField("Enter your password", text: $password)
+                        SecureField("Password", text: $viewModel.password)
                             .roundedTextFieldWithBorder()
                             .autocorrectionDisabled(true)
                             .textInputAutocapitalization(.never)
@@ -35,11 +33,23 @@ struct SignUpView: View {
                     .padding(.horizontal, 28)
                 }
 
-                Spacer()
-                    .frame(height: 40)
-                
-                Button(action: {}) {
-                    Text("Sign up")
+                NavigationLink {
+                    Text("Forgot password")
+                } label: {
+                    Text("Forgot password?")
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                        .padding(.top)
+                        .padding(.trailing, 28)
+                        .foregroundColor(.text)
+                        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .trailing)
+                }
+                .frame(height: 40)
+
+                Button(action: {
+                    Task { try await viewModel.signIn() }
+                }) {
+                    Text("Sign in")
                         .font(.headline)
                         .foregroundStyle(Color.background)
                         .padding()
@@ -52,10 +62,10 @@ struct SignUpView: View {
                 Spacer()
                     .frame(height: 80)
 
-                Button(action: { dismiss() } ) {
+                NavigationLink(destination: SignUpView().navigationBarHidden(true)) {
                     HStack {
-                        Text("Already have an account?")
-                        Text("Sign in.")
+                        Text("Don't have an account?")
+                        Text("Sign up.")
                             .fontWeight(.bold)
                     }
                     .font(.footnote)
@@ -68,5 +78,5 @@ struct SignUpView: View {
 }
 
 #Preview {
-    SignUpView()
+    SignInView()
 }

@@ -6,10 +6,9 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct TripListView: View {
-    @Query() var trips: [Trip]
+    var trips: [Trip] = []
     @State private var createNewBook = false
     
     var body: some View {

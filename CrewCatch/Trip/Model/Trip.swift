@@ -1,17 +1,15 @@
 //
-//  TripModel.swift
+//  Trip.swift
 //  CrewCatch
 //
 //  Created by Krzysztof Kubiak on 08/03/2024.
 //
 
 import Foundation
-import SwiftData
 import MapKit
 
-@Model
-class Trip: Identifiable, Hashable {
-    @Attribute(.unique) var tripID: UUID = UUID()
+class Trip: Identifiable {
+    var tripID: UUID = UUID()
     var name: String
 
 //    var organizer: User

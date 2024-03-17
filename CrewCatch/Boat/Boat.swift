@@ -6,9 +6,7 @@
 //
 
 import Foundation
-import SwiftData
 
-@Model
 class Boat {
     var model: String
     var manufacturer: String?

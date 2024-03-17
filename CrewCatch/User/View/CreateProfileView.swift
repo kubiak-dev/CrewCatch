@@ -6,10 +6,8 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct CreateProfileView: View {
-    @Environment(\.modelContext) private var context
     @Environment(\.dismiss) var dismiss
     @State var name: String = ""
     @State var email: String = "pawel@email.com" //change with logging support
@@ -25,8 +23,8 @@ struct CreateProfileView: View {
                 TextField("Tell us about yourself", text: $bio)
                 DatePicker("Date of Birth", selection: $dateOfBirth, displayedComponents: .date)
                 Button("Create") {
-                    let newProfile = User(name: name, email: email, password: password, profilePicture: profilePicture, bio: bio, dateOfBirth: dateOfBirth)
-                    context.insert(newProfile)
+//                    let newProfile = User(name: name, email: email, password: password, profilePicture: profilePicture, bio: bio, dateOfBirth: dateOfBirth)
+//                  add user
                     dismiss()
                 }
                 .frame(maxWidth: .infinity, alignment: .trailing)

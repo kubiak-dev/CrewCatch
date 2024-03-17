@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct NewTripView: View {
-    @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) var dismiss
     @State private var tripName: String = ""
     @State private var tripDescription: String = ""
@@ -30,8 +29,8 @@ struct NewTripView: View {
                     }
                 }
                 Button("Create") {
-                    let newTrip = Trip(name: tripName, organizer: organizer, startDate: startDate, endDate: endDate)
-                    modelContext.insert(newTrip)
+//                    let newTrip = Trip(name: tripName, organizer: organizer, startDate: startDate, endDate: endDate)
+//                    add trip
                     dismiss()
                 }
                 .frame(maxWidth: .infinity, alignment: .trailing)

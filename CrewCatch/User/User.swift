@@ -6,15 +6,15 @@
 //
 
 import Foundation
-import SwiftData
 
-@Model
-class User: Hashable, Identifiable {
-    @Attribute(.unique) var userID: UUID = UUID()
-    @Attribute(.unique) var email: String
+
+class User: Identifiable {
+    var userID: UUID = UUID()
+    var email: String
     var name: String
+    var username: String
     var password: String
-//    var trips: [Trip]
+    var trips: [Trip] = []
     var profilePicture: Data?
     var bio: String
     var dateOfBirth: Date
@@ -25,17 +25,17 @@ class User: Hashable, Identifiable {
         return ageComponents.year ?? 0
     }
 
-    init(name: String, email: String, password: String, profilePicture: Data? = nil, bio: String, dateOfBirth: Date) {
+    init(name: String, email: String, password: String, username: String, profilePicture: Data? = nil, bio: String, dateOfBirth: Date) {
         self.name = name
         self.email = email
         self.password = password
-//        self.trips = []
         self.profilePicture = profilePicture
         self.bio = bio
         self.dateOfBirth = dateOfBirth
+        self.username = username
     }
 }
 
 extension User {
-    
+    static let mockUser = User(name: "Krzysztof", email: "kkubiakx@gmail.com", password: "password", username: "kkubiakx", profilePicture: nil, bio: "I'm a software developer, I love sailing and I'm looking for a crew to sail with me.", dateOfBirth: Calendar.current.date(from: DateComponents(year: 1999, month: 2, day: 1))!)
 }
