@@ -42,7 +42,7 @@
 		99F4036C2B9DFC250015A882 /* CreateProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F4036B2B9DFC250015A882 /* CreateProfileView.swift */; };
 		99F4036E2B9E48870015A882 /* TripListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F4036D2B9E48870015A882 /* TripListView.swift */; };
 		99F403702B9E497F0015A882 /* NewTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F4036F2B9E497F0015A882 /* NewTripView.swift */; };
-		99F403732B9E4FA20015A882 /* TripListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F403722B9E4FA20015A882 /* TripListItem.swift */; };
+		99F403732B9E4FA20015A882 /* TripCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F403722B9E4FA20015A882 /* TripCardView.swift */; };
 		99F403752B9E51330015A882 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F403742B9E51330015A882 /* Stop.swift */; };
 		99F403822B9FA8620015A882 /* LogoNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F403812B9FA8620015A882 /* LogoNameView.swift */; };
 		99F4038C2BA0F9030015A882 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 99F4038B2BA0F9030015A882 /* FirebaseAnalytics */; };
@@ -93,7 +93,7 @@
 		99ADE0A82B9A549A00F22250 /* CrewCatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewCatchUITests.swift; sourceTree = "<group>"; };
 		99ADE0AA2B9A549A00F22250 /* CrewCatchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewCatchUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		99ADE0B82B9A56F200F22250 /* WorstveldSling.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WorstveldSling.ttf; sourceTree = "<group>"; };
-		99ADE0BA2B9A576600F22250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		99ADE0BA2B9A576600F22250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99ADE0BB2B9A58B100F22250 /* Abuget.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Abuget.ttf; sourceTree = "<group>"; };
 		99ADE0BE2B9A61AA00F22250 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		99BE55AD2BA22777004EA0EF /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
@@ -102,11 +102,10 @@
 		99D3D74C2B9B917D0057BC5E /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		99D3D74E2B9B97130057BC5E /* Boat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boat.swift; sourceTree = "<group>"; };
 		99D3D7502B9C70E70057BC5E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		99F403692B9DD2820015A882 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		99F4036B2B9DFC250015A882 /* CreateProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileView.swift; sourceTree = "<group>"; };
 		99F4036D2B9E48870015A882 /* TripListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListView.swift; sourceTree = "<group>"; };
 		99F4036F2B9E497F0015A882 /* NewTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripView.swift; sourceTree = "<group>"; };
-		99F403722B9E4FA20015A882 /* TripListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListItem.swift; sourceTree = "<group>"; };
+		99F403722B9E4FA20015A882 /* TripCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCardView.swift; sourceTree = "<group>"; };
 		99F403742B9E51330015A882 /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
 		99F403812B9FA8620015A882 /* LogoNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoNameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -222,6 +221,7 @@
 		9927F59F2BA782BD0059BB69 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				99D3D7502B9C70E70057BC5E /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -240,7 +240,7 @@
 			children = (
 				99F4036D2B9E48870015A882 /* TripListView.swift */,
 				99F4036F2B9E497F0015A882 /* NewTripView.swift */,
-				99F403722B9E4FA20015A882 /* TripListItem.swift */,
+				99F403722B9E4FA20015A882 /* TripCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -257,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				99ADE08A2B9A549900F22250 /* CrewCatch */,
+				99919DFE2BA8E252008798D3 /* GoogleService-Info.plist */,
 				99ADE09D2B9A549A00F22250 /* CrewCatchTests */,
 				99ADE0A72B9A549A00F22250 /* CrewCatchUITests */,
 				99ADE0892B9A549900F22250 /* Products */,
@@ -277,9 +278,7 @@
 		99ADE08A2B9A549900F22250 /* CrewCatch */ = {
 			isa = PBXGroup;
 			children = (
-				99919DFE2BA8E252008798D3 /* GoogleService-Info.plist */,
 				9927F5A22BA783100059BB69 /* Boat */,
-				99ADE0BA2B9A576600F22250 /* Info.plist */,
 				99ADE0B72B9A566800F22250 /* Assets */,
 				99ADE0BD2B9A619700F22250 /* Extension */,
 				99BE55AF2BA22777004EA0EF /* Auth */,
@@ -290,6 +289,7 @@
 				99F4037E2B9FA7320015A882 /* Subviews */,
 				99ADE08B2B9A549900F22250 /* CrewCatchApp.swift */,
 				99ADE0932B9A549A00F22250 /* Preview Content */,
+				99ADE0BA2B9A576600F22250 /* Info.plist */,
 			);
 			path = CrewCatch;
 			sourceTree = "<group>";
@@ -297,7 +297,6 @@
 		99ADE0932B9A549A00F22250 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				99F403692B9DD2820015A882 /* MyPlayground.playground */,
 				99ADE0942B9A549A00F22250 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -383,7 +382,6 @@
 			isa = PBXGroup;
 			children = (
 				9927F59F2BA782BD0059BB69 /* Model */,
-				99D3D7502B9C70E70057BC5E /* User.swift */,
 				9927F59E2BA779E50059BB69 /* View */,
 			);
 			path = User;
@@ -555,7 +553,7 @@
 				9927F5972BA729FB0059BB69 /* TabStateScrollView.swift in Sources */,
 				9927F5922BA71C390059BB69 /* TabBarView.swift in Sources */,
 				99F403822B9FA8620015A882 /* LogoNameView.swift in Sources */,
-				99F403732B9E4FA20015A882 /* TripListItem.swift in Sources */,
+				99F403732B9E4FA20015A882 /* TripCardView.swift in Sources */,
 				99D3D7512B9C70E70057BC5E /* User.swift in Sources */,
 				99BE55B12BA22777004EA0EF /* SignUpView.swift in Sources */,
 				99ADE0BF2B9A61AA00F22250 /* Color.swift in Sources */,

@@ -79,20 +79,25 @@ struct ProfileView: View {
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.bottom, 10)
-
-            Group {
-                if user.trips.isEmpty {
-                    Spacer()
-                        .frame(height: 120)
-                    ContentUnavailableView(
-                        "No trips",
-                        systemImage: "magnifyingglass",
-                        description: Text("\(user.name) has no trips yet")
-                    )
-                } else {
-                    SignInView()
+            
+            VStack {
+                ForEach((1...10), id: \.self) { _ in
+                    TripCardView(trip: .constant(Trip.mockTrip))
                 }
             }
+//            Group {
+//                if user.trips.isEmpty {
+//                    ContentUnavailableView(
+//                        "No trips",
+//                        systemImage: "magnifyingglass",
+//                        description: Text("\(user.name) has no trips yet")
+//                    )
+//                } else {
+////                    ForEach(1...10) {
+////                        TripCardView(trip: Trip.mockTrip)
+////                    }
+//                }
+//            }
         }
     }
 }

@@ -12,37 +12,40 @@ class Trip: Identifiable {
     var tripID: UUID = UUID()
     var name: String
 
-//    var organizer: User
-//    var participants: [User]?
     var organizer: String
-    var crew: [String]?
+//    weak var participants: [User]?
 
-    var stops: [Stop]?
+    var crew: [String]
 
-//    var startDate: Date {
-//        return stops?.first?.departureTime ?? Date()
-//    }
-//    var endDate: Date {
-//        return stops?.last?.arrivalTime ?? Date()
-//    }
-    var startDate: Date
-    var endDate: Date
+    var stops: [Stop]
 
-    init(name: String, organizer: String, crew: [String]? = nil, stops: [Stop]? = nil, startDate: Date, endDate: Date) {
+    var startDate: Date {
+        return stops.first?.departureTime ?? Date()
+    }
+    var endDate: Date {
+        return stops.last?.arrivalTime ?? Date()
+    }
+//    var startDate: Date
+//    var endDate: Date
+    var tripType: TripType
+    var boat: Boat?
+    var maxCrewString: String {
+        if let x = boat?.people {
+            return String(x)
+        } else {
+            return "?"
+        }
+    }
+
+    init(name: String, organizer: String, crew: [String] = [], stops: [Stop] = [], startDate: Date, endDate: Date, tripType: TripType = .recreational, boat: Boat? = nil) {
         self.name = name
         self.organizer = organizer
         self.crew = crew
+        self.crew.append(organizer)
         self.stops = stops
-        self.startDate = startDate
-        self.endDate = endDate
+        self.tripType = tripType
+        self.boat = boat
     }
-
-//    init(name: String, organizer: User, participants: [User]? = nil, stops: [Stop]? = nil) {
-//        self.name = name
-//        self.organizer = organizer
-//        self.participants = participants
-//        self.stops = stops
-//    }
 
 }
 
@@ -69,11 +72,16 @@ extension Trip {
 
 extension Trip {
     static var mockTrip: Trip {
-        Trip(name: "Mock Trip", 
-             organizer: "Paweł",
-             crew: ["Ilona", "Adam", "Krzysiek"],
-             stops: [],
+        Trip(name: "Majowa wycieczka w chuj",
+             organizer: "Krzysztof",
+             crew: ["Ilona", "Adam", "Paweł", "Julia"],
+             stops: [
+                Stop(location: CLLocationCoordinate2D(latitude: 52.2297, longitude: 21.0122), departureTime: Date(), name: "Start"),
+                Stop(location: CLLocationCoordinate2D(latitude: 52.2297, longitude: 21.0122), arrivalTime: Date(), name: "End")
+             ],
              startDate: Date(),
-             endDate: Date())
+             endDate: Date(),
+             tripType: .recreationalAndTraining
+        )
     }
 }
