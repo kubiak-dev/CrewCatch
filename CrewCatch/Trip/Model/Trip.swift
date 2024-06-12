@@ -12,7 +12,7 @@ class Trip: Identifiable {
     var tripID: UUID = UUID()
     var name: String
 
-    var organizer: String
+    var organizer: User
 //    weak var participants: [User]?
 
     var crew: [String]
@@ -37,11 +37,11 @@ class Trip: Identifiable {
         }
     }
 
-    init(name: String, organizer: String, crew: [String] = [], stops: [Stop] = [], startDate: Date, endDate: Date, tripType: TripType = .recreational, boat: Boat? = nil) {
+    init(name: String, organizer: User, crew: [String] = [], stops: [Stop] = [], tripType: TripType = .recreational, boat: Boat? = nil) {
         self.name = name
         self.organizer = organizer
         self.crew = crew
-        self.crew.append(organizer)
+        self.crew.append(organizer.name)
         self.stops = stops
         self.tripType = tripType
         self.boat = boat
@@ -71,17 +71,37 @@ extension Trip {
 }
 
 extension Trip {
-    static var mockTrip: Trip {
-        Trip(name: "Majowa wycieczka w chuj",
-             organizer: "Krzysztof",
+    static var mockTrips: [Trip] { [
+        Trip(name: "Majowa wycieczka w chuj i wchuj i wchuj i wchuj",
+             organizer: User.mockUsers[0],
              crew: ["Ilona", "Adam", "Paweł", "Julia"],
              stops: [
-                Stop(location: CLLocationCoordinate2D(latitude: 52.2297, longitude: 21.0122), departureTime: Date(), name: "Start"),
-                Stop(location: CLLocationCoordinate2D(latitude: 52.2297, longitude: 21.0122), arrivalTime: Date(), name: "End")
+                Stop(location: CLLocationCoordinate2D(latitude: 52.2297, longitude: 21.0122),
+                     departureTime: Calendar.current.date(from: DateComponents(year: 2024, month: 5, day: 13))!,
+                     name: "Start"
+                    ),
+                Stop(location: CLLocationCoordinate2D(latitude: 52.2297, longitude: 21.0122),
+                     arrivalTime: Calendar.current.date(from: DateComponents(year: 2024, month: 5, day: 20))!,
+                     name: "End"
+                    )
              ],
-             startDate: Date(),
-             endDate: Date(),
+             tripType: .recreationalAndTraining
+        ),
+        Trip(name: "Czerwcowa wycieczka w chuj",
+             organizer: User.mockUsers[1],
+             crew: ["Ilona", "Adam", "Paweł", "Julia"],
+             stops: [
+                Stop(location: CLLocationCoordinate2D(latitude: 52.2297, longitude: 21.0122), 
+                     departureTime: Calendar.current.date(from: DateComponents(year: 2024, month: 6, day: 13))!,
+                     name: "Start"
+                    ),
+                Stop(location: CLLocationCoordinate2D(latitude: 52.2297, longitude: 21.0122), 
+                     arrivalTime: Calendar.current.date(from: DateComponents(year: 2024, month: 6, day: 20))!,
+                     name: "End"
+                    )
+             ],
              tripType: .recreationalAndTraining
         )
+        ]
     }
 }

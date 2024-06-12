@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99056C2C2BC5C4D80039B9D5 /* FullTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99056C2B2BC5C4D80039B9D5 /* FullTripView.swift */; };
+		99077A3F2BAC5391004660BF /* ProfileLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99077A3E2BAC5391004660BF /* ProfileLink.swift */; };
 		9927F5822BA5D95F0059BB69 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9927F5812BA5D95F0059BB69 /* FirebaseFirestoreSwift */; };
 		9927F5842BA5D9690059BB69 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9927F5832BA5D9690059BB69 /* FirebaseStorage */; };
 		9927F5882BA7145B0059BB69 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9927F5872BA7145B0059BB69 /* SignUpViewModel.swift */; };
@@ -23,6 +25,8 @@
 		99919DFF2BA8E252008798D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99919DFE2BA8E252008798D3 /* GoogleService-Info.plist */; };
 		99919E002BA8E252008798D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99919DFE2BA8E252008798D3 /* GoogleService-Info.plist */; };
 		99919E012BA8E252008798D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99919DFE2BA8E252008798D3 /* GoogleService-Info.plist */; };
+		99ACA0892C1761E80007F881 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ACA0882C1761E80007F881 /* UserService.swift */; };
+		99ACA08C2C1762FF0007F881 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ACA08B2C1762FF0007F881 /* ProfileViewModel.swift */; };
 		99ADE08C2B9A549900F22250 /* CrewCatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ADE08B2B9A549900F22250 /* CrewCatchApp.swift */; };
 		99ADE08E2B9A549900F22250 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ADE08D2B9A549900F22250 /* ContentView.swift */; };
 		99ADE0922B9A549A00F22250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99ADE0912B9A549A00F22250 /* Assets.xcassets */; };
@@ -70,6 +74,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		99056C2B2BC5C4D80039B9D5 /* FullTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullTripView.swift; sourceTree = "<group>"; };
+		99077A3E2BAC5391004660BF /* ProfileLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLink.swift; sourceTree = "<group>"; };
 		9927F5872BA7145B0059BB69 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		9927F5892BA715C20059BB69 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		9927F58E2BA71AFE0059BB69 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
@@ -82,6 +88,8 @@
 		997131322B9A6CA500D57099 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		997131342B9A6DAB00D57099 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		99919DFE2BA8E252008798D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		99ACA0882C1761E80007F881 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		99ACA08B2C1762FF0007F881 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		99ADE0882B9A549900F22250 /* CrewCatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrewCatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99ADE08B2B9A549900F22250 /* CrewCatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewCatchApp.swift; sourceTree = "<group>"; };
 		99ADE08D2B9A549900F22250 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -160,8 +168,8 @@
 		9927F5862BA712D70059BB69 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				9927F5872BA7145B0059BB69 /* SignUpViewModel.swift */,
 				9927F5942BA71FA20059BB69 /* SignInViewModel.swift */,
+				9927F5872BA7145B0059BB69 /* SignUpViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -205,6 +213,7 @@
 				9927F5912BA71C390059BB69 /* TabBarView.swift */,
 				9927F59A2BA734510059BB69 /* DiscoverView.swift */,
 				9927F59C2BA734650059BB69 /* MyTripsView.swift */,
+				99077A3E2BAC5391004660BF /* ProfileLink.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -241,6 +250,7 @@
 				99F4036D2B9E48870015A882 /* TripListView.swift */,
 				99F4036F2B9E497F0015A882 /* NewTripView.swift */,
 				99F403722B9E4FA20015A882 /* TripCardView.swift */,
+				99056C2B2BC5C4D80039B9D5 /* FullTripView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -251,6 +261,22 @@
 				99D3D74E2B9B97130057BC5E /* Boat.swift */,
 			);
 			path = Boat;
+			sourceTree = "<group>";
+		};
+		99ACA0872C1761D50007F881 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				99ACA0882C1761E80007F881 /* UserService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		99ACA08A2C1762F40007F881 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				99ACA08B2C1762FF0007F881 /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		99ADE07F2B9A549900F22250 = {
@@ -278,17 +304,17 @@
 		99ADE08A2B9A549900F22250 /* CrewCatch */ = {
 			isa = PBXGroup;
 			children = (
-				9927F5A22BA783100059BB69 /* Boat */,
-				99ADE0B72B9A566800F22250 /* Assets */,
-				99ADE0BD2B9A619700F22250 /* Extension */,
+				99ADE08B2B9A549900F22250 /* CrewCatchApp.swift */,
 				99BE55AF2BA22777004EA0EF /* Auth */,
+				9927F5A22BA783100059BB69 /* Boat */,
 				9927F58B2BA71AA70059BB69 /* Root */,
 				9927F5902BA71C200059BB69 /* TabBar */,
 				99F403712B9E4F800015A882 /* Trip */,
 				99F403832B9FB46F0015A882 /* User */,
 				99F4037E2B9FA7320015A882 /* Subviews */,
-				99ADE08B2B9A549900F22250 /* CrewCatchApp.swift */,
 				99ADE0932B9A549A00F22250 /* Preview Content */,
+				99ADE0BD2B9A619700F22250 /* Extension */,
+				99ADE0B72B9A566800F22250 /* Assets */,
 				99ADE0BA2B9A576600F22250 /* Info.plist */,
 			);
 			path = CrewCatch;
@@ -381,6 +407,8 @@
 		99F403832B9FB46F0015A882 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				99ACA08A2C1762F40007F881 /* ViewModel */,
+				99ACA0872C1761D50007F881 /* Service */,
 				9927F59F2BA782BD0059BB69 /* Model */,
 				9927F59E2BA779E50059BB69 /* View */,
 			);
@@ -550,11 +578,15 @@
 				99F403752B9E51330015A882 /* Stop.swift in Sources */,
 				9927F59B2BA734510059BB69 /* DiscoverView.swift in Sources */,
 				99D3D74D2B9B917D0057BC5E /* Trip.swift in Sources */,
+				99ACA0892C1761E80007F881 /* UserService.swift in Sources */,
 				9927F5972BA729FB0059BB69 /* TabStateScrollView.swift in Sources */,
 				9927F5922BA71C390059BB69 /* TabBarView.swift in Sources */,
 				99F403822B9FA8620015A882 /* LogoNameView.swift in Sources */,
 				99F403732B9E4FA20015A882 /* TripCardView.swift in Sources */,
+				99077A3F2BAC5391004660BF /* ProfileLink.swift in Sources */,
 				99D3D7512B9C70E70057BC5E /* User.swift in Sources */,
+				99056C2C2BC5C4D80039B9D5 /* FullTripView.swift in Sources */,
+				99ACA08C2C1762FF0007F881 /* ProfileViewModel.swift in Sources */,
 				99BE55B12BA22777004EA0EF /* SignUpView.swift in Sources */,
 				99ADE0BF2B9A61AA00F22250 /* Color.swift in Sources */,
 				9927F58F2BA71AFE0059BB69 /* ContentViewModel.swift in Sources */,

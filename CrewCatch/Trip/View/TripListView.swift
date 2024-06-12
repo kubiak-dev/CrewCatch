@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TripListView: View {
-    var trips: [Trip] = []
+    @Binding var trips: [Trip]
     @State private var createNewBook = false
     
     var body: some View {
@@ -42,5 +42,5 @@ struct TripListView: View {
 }
 
 #Preview {
-    TripListView()
+    TripListView(trips: .constant(Trip.mockTrips))
 }

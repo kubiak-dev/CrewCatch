@@ -12,120 +12,166 @@ struct TripCardView: View {
     let radius: CGFloat = 7
     let dateSize: CGFloat = 14
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 10)
-                .fill(.white)
-                .frame(height: 180)
-                .shadow(radius: 2, x: 1, y: 5)
 
-            VStack {
-                Image("ship1")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .alignmentGuide(.bottom) { _ in 0 }
-                    .frame(height: 150)
-                    .mask(
-                        LinearGradient(
-                            gradient: Gradient(colors: [.white, .clear]), startPoint: .top, endPoint: .bottom)
-                    )
-                    .clipShape(TopRoundedShape(cornerRadius: radius))
+        NavigationStack {
+            ZStack {
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(.white)
+//                    .frame(height: 180)
+                    .shadow(radius: 2, x: 1, y: 5)
 
-                Spacer()
-            }
-            
-            // Top layer
-            VStack(alignment: .leading) {
-                
-                // Image overlay portion
-                VStack(alignment: .leading) {
-                    
-                    //Title and trip type
-                    Text("\"\(trip.name)\"")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .foregroundColor(.text)
-                        .italic()
-
-                    Text(trip.tripType.descr)
-                        .font(.system(size: 16))
+                VStack {
+                    Image("ship1")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .alignmentGuide(.bottom) { _ in 0 }
+                        .frame(height: 150)
+                        .mask(
+                            LinearGradient(
+                                gradient: Gradient(colors: [.white, .clear]), startPoint: .top, endPoint: .bottom)
+                        )
+                        .clipShape(TopRoundedShape(cornerRadius: radius))
 
                     Spacer()
-                    
-                    // Locations and dates
-                    HStack {
-                        VStack(alignment: .leading, spacing: 4) {
-                            HStack(spacing: 5) {
-                                Image(systemName: "location.fill")
-                                    .resizable()
-                                    .foregroundColor(.text)
-                                    .frame(width: dateSize - 2, height: dateSize - 2)
-                                Text("Sieradz, Poland")
-                                    .foregroundStyle(.text)
-                                    .font(.system(size: dateSize))
-                                    .bold()
-                            }
+                }
 
-                            HStack(spacing: 5) {
-                                Image(systemName: "calendar")
-                                    .resizable()
-                                    .foregroundColor(.text)
-                                    .frame(width: dateSize - 4, height: dateSize - 4)
-                                Text(trip.startDate, style: .date)
-                                    .foregroundStyle(.text)
-                                    .font(.system(size: dateSize - 2))
-                            }
+                // Top layer
+                VStack(alignment: .leading) {
 
+                    // Image overlay portion
+                    VStack(alignment: .leading) {
+
+                        //Title and trip type
+                        HStack {
+                            Text("\"\(trip.name)\"")
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .foregroundColor(.text)
+                            .italic()
+                            Spacer()
+                            Button {
+
+                            } label: {
+                                Image(systemName: "ellipsis")
+                                    .foregroundColor(.text)
+                            }
                         }
+
+                        Text(trip.tripType.descr)
+                            .font(.system(size: 16))
 
                         Spacer()
 
-                        VStack(alignment: .leading, spacing: 4) {
-                            HStack(spacing: 5) {
-                                Image(systemName: "location.fill")
-                                    .resizable()
-                                    .foregroundColor(.text)
-                                    .frame(width: dateSize - 2, height: dateSize - 2)
-                                Text("Sieradz, Poland")
-                                    .foregroundStyle(.text)
-                                    .font(.system(size: dateSize))
-                                    .bold()
+                        // Locations and dates
+                        HStack {
+                            VStack(alignment: .leading, spacing: 4) {
+                                HStack(spacing: 5) {
+//                                    Image(systemName: "location.fill")
+//                                        .resizable()
+//                                        .foregroundColor(.text)
+//                                        .frame(width: dateSize - 2, height: dateSize - 2)
+                                    Text("Sieradz, Poland")
+                                        .foregroundStyle(.text)
+                                        .font(.system(size: dateSize))
+                                        .bold()
+                                }
+
+                                HStack(spacing: 5) {
+                                    Image(systemName: "calendar")
+                                        .resizable()
+                                        .foregroundColor(.text)
+                                        .frame(width: dateSize - 4, height: dateSize - 4)
+                                    Text(trip.startDate, style: .date)
+                                        .foregroundStyle(.text)
+                                        .font(.system(size: dateSize - 2))
+                                }
+
                             }
 
-                            HStack(spacing: 5) {
-                                Image(systemName: "calendar")
-                                    .resizable()
-                                    .foregroundColor(.text)
-                                    .frame(width: dateSize - 4, height: dateSize - 4)
-                                Text(trip.startDate, style: .date)
-                                    .foregroundStyle(.text)
-                                    .font(.system(size: dateSize - 2))
+                            Spacer()
+
+                            Image("path2")
+                                .resizable()
+                                .frame(width: 120, height: 30)
+                            Spacer()
+
+                            VStack(alignment: .trailing, spacing: 4) {
+                                HStack(spacing: 5) {
+//                                    Image(systemName: "location.fill")
+//                                        .resizable()
+//                                        .foregroundColor(.text)
+//                                        .frame(width: dateSize - 2, height: dateSize - 2)
+                                    Text("Sieradz, Poland")
+                                        .foregroundStyle(.text)
+                                        .font(.system(size: dateSize))
+                                        .bold()
+                                }
+
+                                HStack(spacing: 5) {
+                                    Image(systemName: "calendar")
+                                        .resizable()
+                                        .foregroundColor(.text)
+                                        .frame(width: dateSize - 4, height: dateSize - 4)
+                                    Text(trip.startDate, style: .date)
+                                        .foregroundStyle(.text)
+                                        .font(.system(size: dateSize - 2))
+                                }
                             }
                         }
                     }
-                }
-                .frame(height: 120)
+                    .frame(height: 120)
 
-                Spacer()
+                    Spacer()
 
-                HStack(alignment: .bottom, spacing: 5) {
-                    Image(systemName: "person.fill")
-                        .resizable()
-                        .foregroundColor(.text)
-                        .frame(width: dateSize, height: dateSize)
-                        .padding(.bottom, 3)
-                    Text("\(trip.crew.count) / \(trip.maxCrewString)")
-                        .foregroundStyle(.text)
-                        .font(.system(size: dateSize))
-                        .bold()
+                    HStack(alignment: .bottom, spacing: 5) {
+                        Image(systemName: "person.fill")
+                            .resizable()
+                            .foregroundColor(.text)
+                            .frame(width: dateSize, height: dateSize)
+                            .padding(.bottom, 3)
+                        Text("\(trip.crew.count) / \(trip.maxCrewString)")
+                            .foregroundStyle(.text)
+                            .font(.system(size: dateSize))
+                            .bold()
+
+                        Spacer()
+
+
+
+//                        HStack {
+//                            Image("profile")
+//                                .resizable()
+//                                .scaledToFit()
+//                                .frame(width: dateSize*1.5, height: dateSize*1.5)
+//                                .clipShape(Circle())
+//                                .overlay(Circle().stroke(Color.black, lineWidth: 1))
+//
+//                            //                            VStack(alignment: .leading) {
+//                            //                                Text("\(trip.organizer.name),  \(trip.organizer.age)")
+//                            //                                    .font(.title2)
+//                            //                                    .fontWeight(.bold)
+//                            //                                    .foregroundStyle(.text)
+//                            //
+//                            //                                Text("@\(trip.organizer.username)")
+//                            //                                    .font(.callout)
+//                            //                                    .italic()
+//                            //                                    .foregroundStyle(.text)
+//                            //
+//                            //                                Spacer()
+//                            //                            }
+//                        }
+
+                    }
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .padding(.vertical, 5)
+                .padding(.horizontal, 8)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .padding(.vertical, 5)
-            .padding(.horizontal, 8)
-        }
-        .frame(maxWidth: .infinity)
-        .frame(height: 180)
+            .frame(maxWidth: .infinity)
+            .frame(height: 180)
         .padding(10)
+        }
+
     }
 }
 
@@ -149,6 +195,6 @@ struct TopRoundedShape: Shape {
 }
 
 #Preview {
-    TripCardView(trip: .constant(Trip.mockTrip))
+    TripCardView(trip: .constant(Trip.mockTrips[0]))
 //        .background(Color.black)
 }

@@ -8,28 +8,42 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @State private var user = User.mockUser
+    @StateObject var viewModel = ProfileViewModel()
+    private var currentUser: UserModel? {
+        return viewModel.currentUser
+    }
 
     var body: some View {
         ScrollView(showsIndicators: false) {
             // HEADER
             VStack {
                 HStack {
-                    Image("profile")
-                        .resizable()
-                        .scaledToFit()
+//                    Image("profile")
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(width: 80, height: 80)
+//                        .clipShape(Circle())
+//                        .overlay(Circle().stroke(Color.white, lineWidth: 4))
+//                        .shadow(radius: 10)
+                    Circle()
+                        .stroke(Color.accentColor, lineWidth:4)
                         .frame(width: 80, height: 80)
-                        .clipShape(Circle())
-                        .overlay(Circle().stroke(Color.white, lineWidth: 4))
-                        .shadow(radius: 10)
+                        .overlay(
+                            Image("profile")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 76, height: 76)
+                                .clipShape(Circle())
+                        )
+
 
                     VStack(alignment: .leading) {
-                        Text("\(user.name),  \(user.age)")
+                        Text("\(currentUser?.fullname ?? "Krzysztof"),  \(currentUser?.age ?? 23)")
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundStyle(.text)
 
-                        Text("@\(user.username)")
+                        Text("@\(currentUser?.username ?? "kkubiak")")
                             .font(.callout)
                             .italic()
                             .foregroundStyle(.text)
@@ -42,7 +56,7 @@ struct ProfileView: View {
 
                     VStack {
                         Button(action: {
-                            // Share Profile
+                            AuthService.shared.signOut()
                         }) {
                             Image(systemName: "square.and.arrow.up")
                                 .resizable()
@@ -53,9 +67,13 @@ struct ProfileView: View {
                         Spacer()
                     }
                 }
+                .tag("header")
                 .padding()
-                
-                Text(user.bio)
+
+                Text(currentUser?.bio ?? "bio")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 8)
+
 
                 //Make visible only if current user
                 Button(action: {
@@ -75,14 +93,14 @@ struct ProfileView: View {
                     .padding(5)
             }
 
-            Text("\(user.name)'s trips")
+            Text("\(currentUser?.fullname ?? "User")'s trips")
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.bottom, 10)
             
             VStack {
                 ForEach((1...10), id: \.self) { _ in
-                    TripCardView(trip: .constant(Trip.mockTrip))
+                    TripCardView(trip: .constant(Trip.mockTrips[0]))
                 }
             }
 //            Group {
@@ -98,6 +116,7 @@ struct ProfileView: View {
 ////                    }
 //                }
 //            }
+
         }
     }
 }

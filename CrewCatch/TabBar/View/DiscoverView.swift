@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct DiscoverView: View {
+    var trips: [Trip] = Trip.mockTrips
     var body: some View {
-        Text("Discover")
+//        NavigationStack {
+            ScrollView {
+                LazyVStack {
+                    ForEach(trips, id: \.id) { trip in
+                        TripCardView(trip: .constant(trip))
+                    }
+                }
+            }
+//        }
     }
 }
 

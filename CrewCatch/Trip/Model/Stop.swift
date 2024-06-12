@@ -28,7 +28,7 @@ class Stop: Codable {
         self.departureTime = departureTime
         self.name = name
         self.desc = description
-        updateLocationInfo()
+//        updateLocationInfo()
     }
 
     private func updateLocationInfo() {
